@@ -1,3 +1,10 @@
+from fastapi import FastAPI, Request, UploadFile, File
+from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
+import base64
+import openai
+import os
+from supabase import create_client, Client
 
 app = FastAPI()
 from fastapi import FastAPI, Request
