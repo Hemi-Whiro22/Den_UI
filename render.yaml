@@ -2,7 +2,7 @@ services:
   - type: web
     name: kitenga-chat
     env: python
-    buildCommand: buildCommand: "requirements.txt"
+    buildCommand: "requirements.txt"
     startCommand: "uvicorn backend.kitenga_backend:app --host 0.0.0.0 --port 10000"
     envVars:
       - key: OPENAI_API_KEY
