@@ -24,14 +24,31 @@ app.add_middleware(
     allow_headers=["*"],
 )
 import os
+import json
 
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "")
 
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
+# ✅ Ensure the memory directory exists
+os.makedirs("memory", exist_ok=True)
 
+# ✅ Create an empty memory file if not present
+memory_file_path = "memory/kitenga_memory.json"
+if not os.path.exists(memory_file_path):
+    with open(memory_file_path, "w") as f:
+        json.dump({}, f)  # or prefill with some initial memory structure
+
+# ✅ Class definition stays OUTSIDE the file-writing block
 class ChatInput(BaseModel):
+    message: str
+    user_id: str = "default_user"
+
+
+# Now write the memory file
+with open("memory/kitenga_memory.json", "w") as f:
+ class ChatInput(BaseModel):
     message: str
     user_id: str = "default_user"
 
