@@ -1,4 +1,3 @@
-pip install -r requirements.
 fastapi
 uvicorn
 openai
