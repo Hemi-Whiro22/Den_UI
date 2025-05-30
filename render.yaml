@@ -3,11 +3,11 @@ services:
     name: kitenga-chat
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "python3 -m uvicorn backend.kitenga_backend:app --host 0.0.0.0 --port 10000"
+    startCommand: "uvicorn backend.kitenga_backend:app --host 0.0.0.0 --port 10000"
     envVars:
       - key: OPENAI_API_KEY
-        value: 
+        value: your-openai-key-here
       - key: SUPABASE_URL
-        value: "https://pfyxslvdrcwcdsfldyvl.supabase.co"
+        value: your-supabase-url-here
       - key: SUPABASE_KEY
-        value: 
+        value: your-supabase-key-here
