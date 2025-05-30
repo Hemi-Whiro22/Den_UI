@@ -6,8 +6,8 @@ services:
     startCommand: "python3 -m uvicorn backend.kitenga_backend:app --host 0.0.0.0 --port 10000"
     envVars:
       - key: OPENAI_API_KEY
-        value: your-openai-key-here
+        value: "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"
       - key: SUPABASE_URL
-        value: your-supabase-url-here
+        value: "https://pfyxslvdrcwcdsfldyvl.supabase.co"
       - key: SUPABASE_KEY
-        value: your-supabase-key-here
+        value: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBmeXhzbHZkcmN3Y2RzZmxkeXZsIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0NTA0NDAzOSwiZXhwIjoyMDYwNjIwMDM5fQ.1upG1iVNVJXbl4E67mI7iaOqyAgKi9VmacAon6pgFGU"
