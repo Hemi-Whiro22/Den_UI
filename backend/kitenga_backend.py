@@ -23,11 +23,14 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+import os
 
-# Load Supabase from env
-SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY")
-supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
+SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
+SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "")
+
+# Add debug print for confirmation (for dev only)
+print("🔑 SUPABASE_KEY LOADED LENGTH:", len(SUPABASE_KEY))
+)
 
 class ChatInput(BaseModel):
     message: str
