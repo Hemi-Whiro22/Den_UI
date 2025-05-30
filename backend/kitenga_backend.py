@@ -28,9 +28,8 @@ import os
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "")
 
-# Add debug print for confirmation (for dev only)
-print("🔑 SUPABASE_KEY LOADED LENGTH:", len(SUPABASE_KEY))
-)
+supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
+
 
 class ChatInput(BaseModel):
     message: str
